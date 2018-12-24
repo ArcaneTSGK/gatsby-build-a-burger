@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout Component Should render properly 1`] = `
+<Styled(div)>
+  <ForwardRef(render)
+    styles={[Function]}
+  />
+  <main>
+    <div />
+  </main>
+</Styled(div)>
+`;
