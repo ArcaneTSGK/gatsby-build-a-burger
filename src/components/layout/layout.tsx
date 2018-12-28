@@ -5,14 +5,15 @@ import Header from './header/header';
 
 interface ILayoutProps {
     children: any;
+    location: any;
 }
 
-const Layout = ({ children }: ILayoutProps) => (
+const Layout = ({ children, location }: ILayoutProps) => (
   <StyledDiv>
       <Header />
       <Global styles={GlobalStyles} />
       <main>
-          {children}
+        {children}
       </main>
   </StyledDiv>
 );

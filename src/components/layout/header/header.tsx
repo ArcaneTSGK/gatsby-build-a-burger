@@ -13,6 +13,7 @@ export default () => (
         <Link to="/">Home</Link>
         <Link to="/burger">Burger builder</Link>
         <Link to="/orders">Orders</Link>
+        <Link to="/checkout">Checkout</Link>
       </nav>
     </section>
   </StyledHeader>

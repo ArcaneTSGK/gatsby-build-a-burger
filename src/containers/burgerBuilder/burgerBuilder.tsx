@@ -3,6 +3,7 @@ import Burger from '../../components/burger/burger';
 import Controls from '../../components/burger/controls/controls';
 import Modal from '../../components/ui/modal/modal';
 import OrderSummary from "../../components/burger/orderSummary/orderSummary";
+import { navigate } from '@reach/router';
 
 const INGREDIENT_PRICES = {
   sauce: 0.39,
@@ -29,7 +30,11 @@ interface IBurgerBuilderState {
   purchasing: boolean;
 }
 
-class BurgerBuilder extends React.Component<{}, IBurgerBuilderState> {
+interface IBurgerBuilderProps {
+  location: any;
+}
+
+class BurgerBuilder extends React.Component<IBurgerBuilderProps, IBurgerBuilderState> {
   public state = {
     ingredients: {
       sauce: 0,
@@ -43,6 +48,19 @@ class BurgerBuilder extends React.Component<{}, IBurgerBuilderState> {
     purchasable: false,
     purchasing: false
   };
+
+  componentDidMount(){
+    console.log()
+    if(this.props.location.state.ingredients != null){
+      this.setState(
+            {
+        ingredients: this.props.location.state.ingredients,
+        totalPrice: this.props.location.state.totalPrice,
+        purchasable: this.props.location.state.purchasable
+        }
+      )
+    }
+  }
 
   updatePurchaseState (ingredients: Ingredients) {
     const sum = Object.keys(ingredients)
@@ -101,7 +119,7 @@ class BurgerBuilder extends React.Component<{}, IBurgerBuilderState> {
   }
 
   purchaseContinueHandler = () => {
-    alert('You continued!');
+    navigate(`/checkout`, {state: {ingredients: this.state.ingredients, totalPrice: this.state.totalPrice}});
   }
 
   render() {

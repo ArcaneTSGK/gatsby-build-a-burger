@@ -1,5 +1,6 @@
 import * as React from 'react';
 import StyledDiv from './orderSummary.css';
+import StandardButton from '../../ui/buttons/standardButton/standardButton';
 
 interface IOrderSummaryProps {
   ingredients: { [key: string] : number };
@@ -23,8 +24,8 @@ const OrderSummary = ({ ingredients, purchaseCanceled, purchaseContinued, price 
       </ul>
       <p><strong>Total price: {price.toFixed(2)}</strong></p>
       <p>Continue to checkout?</p>
-      <button onClick={purchaseCanceled}>Cancel</button>
-      <button onClick={purchaseContinued}>Continue</button>
+      <StandardButton classBtn="danger" clicked={purchaseCanceled}>Cancel</StandardButton>
+      <StandardButton classBtn="success" clicked={purchaseContinued}>Continue</StandardButton>
     </StyledDiv>
   );
 };
