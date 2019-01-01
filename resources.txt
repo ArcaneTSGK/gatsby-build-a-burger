@@ -1,0 +1,5 @@
+https://storybook.js.org/configurations/typescript-config/
+https://www.gatsbyjs.org/docs/visual-testing-with-storybook/
+https://www.npmjs.com/package/puppeteer
+https://blog.logrocket.com/end-to-end-testing-react-apps-with-puppeteer-and-jest-ce2f414b4fd7
+https://medium.com/bleeding-edge/screenshot-testing-with-react-and-storybook-19ab7e49ec92

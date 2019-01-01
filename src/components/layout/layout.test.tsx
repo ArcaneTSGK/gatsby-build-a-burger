@@ -6,7 +6,7 @@ describe('Layout Component', () => {
   let layout: any;
 
   beforeEach(() => {
-    layout = shallow(<Layout children={<div></div>} />);
+    layout = shallow(<Layout location="" children={<div></div>} />);
   });
 
   it('should not be null', () => {
