@@ -1,15 +1,7 @@
 import * as React from 'react';
 import CheckoutSummary from '../../components/order/checkoutSummary/checkoutSummary';
-import { Router, navigate } from '@reach/router';
-
-interface Ingredients {
-  sauce: number;
-  salad: number;
-  bacon: number;
-  cheese: number;
-  chicken: number;
-  beef: number;
-}
+import { navigate } from '@reach/router';
+import { Ingredients } from '../../types/ingredients';
 
 interface ICheckoutState {
   ingredients: Ingredients;
@@ -45,7 +37,7 @@ class Checkout extends React.Component<ICheckoutProps, ICheckoutState> {
   };
 
   checkoutContinuedHandler = () => {
-    navigate(`/checkout/contact-data`);
+    navigate(`/contact-data`);
   };
 
   render() {

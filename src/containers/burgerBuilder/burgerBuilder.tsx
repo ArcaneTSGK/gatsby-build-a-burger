@@ -4,6 +4,7 @@ import Controls from '../../components/burger/controls/controls';
 import Modal from '../../components/ui/modal/modal';
 import OrderSummary from "../../components/burger/orderSummary/orderSummary";
 import { navigate } from '@reach/router';
+import { Ingredients } from '../../types/ingredients';
 
 const INGREDIENT_PRICES = {
   sauce: 0.39,
@@ -13,15 +14,6 @@ const INGREDIENT_PRICES = {
   chicken: 1.34,
   beef: 2.32
 };
-
-interface Ingredients {
-  sauce: number;
-  salad: number;
-  bacon: number;
-  cheese: number;
-  chicken: number;
-  beef: number;
-}
 
 interface IBurgerBuilderState {
   ingredients: Ingredients;
@@ -112,15 +104,15 @@ class BurgerBuilder extends React.Component<IBurgerBuilderProps, IBurgerBuilderS
 
   purchaseHandler = () => {
     this.setState({purchasing: true});
-  }
+  };
 
   purchaseCancelHandler = () => {
     this.setState({purchasing: false});
-  }
+  };
 
   purchaseContinueHandler = () => {
     navigate(`/checkout`, {state: {ingredients: this.state.ingredients, totalPrice: this.state.totalPrice}});
-  }
+  };
 
   render() {
     return (

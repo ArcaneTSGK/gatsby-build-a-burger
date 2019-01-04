@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Layout from '../components/layout/layout';
+import Orders from '../containers/orders/orders';
 
 interface IOrderPageProps {
   location: any;
@@ -7,6 +8,7 @@ interface IOrderPageProps {
 
 const OrdersPage = ({ location }: IOrderPageProps) => (
   <Layout location={location}>
+    <Orders />
   </Layout>
 );
 
